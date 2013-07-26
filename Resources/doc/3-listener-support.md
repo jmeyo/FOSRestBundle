@@ -6,7 +6,7 @@ are a way to hook into the request handling. This Bundle provides various events
 from decoding the request content in the request (body listener), determining the
 correct response format (format listener), reading parameters from the request
 (parameter fetcher listener), to formatting the response either with a template engine
-like twig or to f.e. xml or json using a serializer (view response listener)) as well
+like twig or to f.e. xml or json using a serializer (view response listener) as well
 as automatically setting the accepted http methods in the response (accept listener).
 
 With this in mind we now turn to explain each one of them.
@@ -362,7 +362,7 @@ class FooController extends Controller
      *
      * Will look for a firstname request parameters, ie. firstname=foo in POST data.
      * If not passed it will error out when read out of the ParamFetcher since RequestParam defaults to strict=true
-     * If passed but doesn't match the requirement "[a-z]+" it will also error out (400 Bad Request)
+     * If passed but doesn't match the requirement "\d+" it will also error out (400 Bad Request)
      * Note that if the value matches the default then no validation is run.
      * So make sure the default value really matches your expectations.
      *
